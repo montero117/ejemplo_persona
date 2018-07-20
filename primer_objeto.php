@@ -17,15 +17,17 @@ class Persona{
 	public function getEdad(){
 		return $this->edad;
 	}
+
 	public function getPeso(){
 		return $this->peso;
 	}
+
 	public function getAltura(){
 		return $this->altura;
 	}
  
  
-	//setters
+	  //setters
 	public function setEdad($value){
 		$this->edad=$value;
 	}
