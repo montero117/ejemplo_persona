@@ -17,7 +17,7 @@ $pedro=new persona();
 $pedro->setEdad(28);
 $pedro->setAltura(1.75);
 $pedro->setPeso(65);
-
+ddddddd
 */
 
 
