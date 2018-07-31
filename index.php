@@ -54,16 +54,12 @@ echo "<br/>IMC: ".$pedro->imc();
 require_once "motordata.php";
 $db = new Database;
 $user = new User($db);
-$user->setId(1);
-$user->getId();
-echo $users = $user->get();
+$user->setId(100);
+ $user->getId();
+ $users = $user->get();
 
-
-/* foreach( $users as $user )
+ 
+foreach( $users as $user )
                     {
-                      echo $user->ID."\n".$user->NOMBRE."\n";
+                        echo $user->ID."\n".$user->NOMBRE."\n";
                     }
- */
-
-
-

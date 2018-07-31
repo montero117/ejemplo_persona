@@ -74,11 +74,12 @@ class User implements IUser
  try{
             if(is_int($this->id))
             {
-                $query = $this->con->prepare('SELECT * FROM "USUARIO" WHERE id = ?');
-                $query->bindParam(1, $this->id, PDO::PARAM_INT);
+                $query = $this->con->prepare('SELECT * FROM "USUARIO" WHERE "ID"= ?');
+                $query->bindParam(1, $this->id,PDO::PARAM_INT);
                 $query->execute();
-     $this->con->close();
-     return $query->fetch(PDO::FETCH_OBJ);
+                $this->con->close();
+                return $query->fetchAll(PDO::FETCH_OBJ);
+ 
             }
             else
             {
