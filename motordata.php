@@ -8,6 +8,7 @@ class User implements IUser
     public  $id;
     private $username;
     private $password;
+    private $tabla;
  
     public function __construct(Database $db)
     {
@@ -17,6 +18,11 @@ class User implements IUser
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    public function settabla($tabla)
+    {
+        $this->tabla = $tabla;
     }
     
     public function getId()
@@ -74,7 +80,7 @@ class User implements IUser
  try{
             if(is_int($this->id))
             {
-                $query = $this->con->prepare('SELECT * FROM "USUARIO" WHERE "ID"= ?');
+                $query = $this->con->prepare('SELECT * FROM "'.$this->tabla.'" WHERE "FOLIO"= ?');
                 $query->bindParam(1, $this->id,PDO::PARAM_INT);
                 $query->execute();
                 $this->con->close();

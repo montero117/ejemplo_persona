@@ -54,12 +54,14 @@ echo "<br/>IMC: ".$pedro->imc();
 require_once "motordata.php";
 $db = new Database;
 $user = new User($db);
-$user->setId(100);
+$user->setId(18070660);
+$user->settabla("CONSULTA_URGENCIAS");
  $user->getId();
+
  $users = $user->get();
 
  
 foreach( $users as $user )
                     {
-                        echo $user->ID."\n".$user->NOMBRE."\n";
+                        echo $user->FOLIO."\n".$user->CURP_PACIENTE."\n";
                     }
