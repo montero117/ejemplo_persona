@@ -49,3 +49,21 @@ echo "<br/>Altura: ".$pedro->altura;
 echo "<br/>Peso: ".$pedro->peso;
 echo "<br/>IMC: ".$pedro->imc();
 */
+
+
+require_once "motordata.php";
+$db = new Database;
+$user = new User($db);
+$user->setId(1);
+$user->getId();
+echo $users = $user->get();
+
+
+/* foreach( $users as $user )
+                    {
+                      echo $user->ID."\n".$user->NOMBRE."\n";
+                    }
+ */
+
+
+

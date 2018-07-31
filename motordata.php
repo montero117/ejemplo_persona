@@ -4,20 +4,27 @@ require_once("user.php");
  
 class User implements IUser
 {
- private $con;
-    private $id;
+    private $con;
+    public  $id;
     private $username;
     private $password;
  
- public function __construct(Database $db)
- {
- $this->con = new $db;
- }
+    public function __construct(Database $db)
+    {
+    $this->con = new $db;
+    }
  
     public function setId($id)
     {
         $this->id = $id;
     }
+    
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
  
     public function setUsername($username)
     {
@@ -67,7 +74,7 @@ class User implements IUser
  try{
             if(is_int($this->id))
             {
-                $query = $this->con->prepare('SELECT * FROM users WHERE id = ?');
+                $query = $this->con->prepare('SELECT * FROM "USUARIO" WHERE id = ?');
                 $query->bindParam(1, $this->id, PDO::PARAM_INT);
                 $query->execute();
      $this->con->close();
@@ -75,7 +82,7 @@ class User implements IUser
             }
             else
             {
-                $query = $this->con->prepare('SELECT * FROM users');
+                $query = $this->con->prepare('SELECT * FROM "USUARIO" order by "ID" ASC');
      $query->execute();
      $this->con->close();
      return $query->fetchAll(PDO::FETCH_OBJ);
