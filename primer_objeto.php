@@ -11,7 +11,7 @@ class Persona{
 
     public function __construct() {
 	   $array = array(21, "bar", "hello", "world");
-	   if($array[0]==20){
+	   if($array[0]===20){
 		$this->edad=$array[0];
         $this->altura=1.80;
         $this->peso=90;
@@ -68,5 +68,4 @@ class Persona{
 		return $this->getPeso() / ($this->getAltura() * $this->getAltura());
  
 	}
- 
 }
