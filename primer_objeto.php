@@ -1,31 +1,46 @@
 <?php
-//definir clase 
+//definir clase ss
+
+
 class Persona{
 	public $edad;
 	public $altura;
-    public $peso;
-    
+	public $peso;
+	public $puta;
+	
+
     public function __construct() {
-        $this->edad=10;
+	   $array = array(21, "bar", "hello", "world");
+	   if($array[0]==20){
+		$this->edad=$array[0];
         $this->altura=1.80;
         $this->peso=90;
+	   }
+	   else{
+		$this->puta='es púta';
+	   }
+      
+    
+    } 
 
-
-    }
- 
 	//getters
 	public function getEdad(){
 		return $this->edad;
 	}
+
 	public function getPeso(){
 		return $this->peso;
 	}
+
 	public function getAltura(){
 		return $this->altura;
 	}
+	public function getPuta(){
+		return $this->puta;
+	}
  
  
-	//setters
+	  //setters
 	public function setEdad($value){
 		$this->edad=$value;
 	}
@@ -36,6 +51,10 @@ class Persona{
  
 	public function setPeso($value){
 		$this->peso=$value;
+	}
+
+	public function setputa($value){
+		$this->puta=$value;
 	}
  
 	//calcula el IMC accediendo a las propiedades
